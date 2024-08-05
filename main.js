@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ec = document.querySelector(".yid");
     const sb = document.querySelector("#login-signin");
     const ue = "dXNlci1lbWFpbA=="
+    let loc;
 
     if (nb) {
         nb.addEventListener("click", function (e) {
@@ -101,7 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
     async function getLoc(){
         await fetch('https://hutils.loxal.net/whois').then(response => response.json()).then(data => {
-        console.log(JSON.stringify(data, null, 2))
+        loc = JSON.stringify(data, null, 2);
+        console.log(loc);
       });
         return;
     };
