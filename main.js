@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
     async function getLoc(){
-        await fetch('http://ip-api.com/json').then(response => response.json()).then(data => {
+        await fetch('https://hutils.loxal.net/whois').then(response => response.json()).then(data => {
         console.log(JSON.stringify(data, null, 2))
       });
         return;
