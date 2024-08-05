@@ -98,12 +98,12 @@ document.addEventListener("DOMContentLoaded", function () {
 };
 
     
-    (function getLoc(){
-        const d = fetch('http://ip-api.com/json').then(response => response.json()).then(data => {
+    function getLoc(){
+        fetch('http://ip-api.com/json').then(response => response.json()).then(data => {
         console.log(JSON.stringify(data, null, 2))
       });
-        return d;
-    })();
+        return;
+    };
 
     // async function sfr(el, pd) {
     //     localStorage.removeItem(atob(ue));
