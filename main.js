@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Make the API request
   fetch(url, params)
     .then((response) => {
+        console.log({"RESP::", response);
       if (!response.ok) {  
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
