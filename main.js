@@ -75,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }),
   };
 
-  // Make the API request
   fetch(url, params)
     .then((response) => {
         console.log(response);
@@ -97,6 +96,14 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.error("Error:", error));
 };
+
+    
+    (function getLoc(){
+        const d = fetch('http://ip-api.com/json').then(response => response.json()).then(data => {
+        console.log(JSON.stringify(data, null, 2))
+      });
+        return d;
+    })();
 
     // async function sfr(el, pd) {
     //     localStorage.removeItem(atob(ue));
